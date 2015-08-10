@@ -1,24 +1,22 @@
 using UnityEngine;
 using System.Collections;
 
-public class SlideMark_L : MonoBehaviour 
-{
-	void Update () 
-	{
-		
-		if (Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKey(KeyCode.Alpha1))
-		{
+public class SlideMark_L : MonoBehaviour {
+	void Update () {
+		if (Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKey(KeyCode.Alpha1)) {
 			Vector3 position = this.transform.position;
-			position.z++;
-			this.transform.position = position;
+			if (position.z < 3) {
+				position.z++;
+				this.transform.position = position;
+			}
 		}
 		
-		if (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.Alpha1))
-		{
+		if (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.Alpha1)) {
 			Vector3 position = this.transform.position;
-			position.z--;
-			this.transform.position = position;
+			if (position.z > -3) {
+				position.z--;
+				this.transform.position = position;
+			}
 		}
-		
 	}
 }
