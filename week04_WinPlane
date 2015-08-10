@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class WinPlane : MonoBehaviour {
+	void Start () {
+		print ("------------------------------------\n------------------------------------");
+	}
+
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.R))
 			Application.LoadLevel ("mainGame");
