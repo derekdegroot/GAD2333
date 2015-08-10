@@ -5,14 +5,18 @@ public class SlideMark_C : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKey(KeyCode.Alpha2)) {
 			Vector3 position = this.transform.position;
-			position.z++;
-			this.transform.position = position;
+			if (position.z < 3) {
+				position.z++;
+				this.transform.position = position;
+			}
 		}
-
+		
 		if (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.Alpha2)) {
 			Vector3 position = this.transform.position;
-			position.z--;
-			this.transform.position = position;
+			if (position.z > -3) {
+				position.z--;
+				this.transform.position = position;
+			}
 		}
 	}
 }
